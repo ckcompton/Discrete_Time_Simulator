@@ -1,0 +1,47 @@
+//compiling and running
+
+g++ -std=c++11 network.cpp node.cpp packet.cpp -o sim
+./sim topology1.txt 10
+
+Cameron Compton
+///////////////////  Project 1 ///////////////////////
+
+Design
+
+I went for the least number of classes
+
+There are 3 classes for this project: network,nodes, and packets. 
+Each class contains vectors that hold the containers of information. 
+The events queue is a list of packets, everything else uses vectors.
+The information is stored in the correct struct then inserted on to the vector. 
+
+The network fills the data
+The network creates packets and fills them on to the events list.
+It also sends each packet on the event list to the node class getsPacket()
+If the routingtable was updated the network pops the packet off the list.
+It continues until the list is empty or the currentTime>totalTime
+
+Network class	
+
+vector of events	
+vector of nodes
+initial
+simulation
+
+Node Class
+
+struct for routing info/Dv
+struct for neighbors
+
+vector of neighbors
+vector of routing info aka the routing table
+
+a couple of getters and setters
+
+Packet Class
+
+struct for DV's
+
+vector of DV's 
+
+Every packet has a source, destination,type,arrivalTime,sentTime
